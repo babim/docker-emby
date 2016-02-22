@@ -27,8 +27,3 @@ User ID emby should run under, default is 99 for unRAID compatiability.
 ### `EMBY_GROUPID`
 
 Group ID emby should run under, default is 100 for unRAID compatiability.
-
-
-## Other info:
-
-### Restarting emby

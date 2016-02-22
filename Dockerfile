@@ -1,12 +1,12 @@
 FROM babim/debianbase
 
 # Configure user nobody to match unRAID's settings
-RUN DEBIAN_FRONTEND="noninteractive" && \
-    groupmod -g 100 users && \
-    usermod -u 99 nobody && \
-    usermod -g 100 nobody && \
-    usermod -d /home nobody && \
-    chown -R nobody:users /home
+#RUN DEBIAN_FRONTEND="noninteractive" && \
+#    groupmod -g 100 users && \
+#    usermod -u 99 nobody && \
+#    usermod -g 100 nobody && \
+#    usermod -d /home nobody && \
+#    chown -R nobody:users /home
 
 # add source repo
 RUN wget http://download.opensuse.org/repositories/home:emby/Debian_8.0/Release.key -O- |apt-key add – && \

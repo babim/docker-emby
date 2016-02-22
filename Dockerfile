@@ -1,7 +1,7 @@
 FROM babim/debianbase
 
 # Configure user nobody to match unRAID's settings
-RUN export DEBIAN_FRONTEND="noninteractive" && \
+RUN DEBIAN_FRONTEND="noninteractive" && \
     groupmod -g 100 users && \
     usermod -u 99 nobody && \
     usermod -g 100 nobody && \

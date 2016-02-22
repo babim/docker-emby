@@ -7,8 +7,8 @@ if [[ $(cat /etc/timezone) != $TZ ]] ; then
 fi
 
 # Adjust UID and GID of nobody with environmet variables
-USER_ID=${MB_USER_ID:-99}
-GROUP_ID=${MB_GROUP_ID:-100}
+USER_ID=${EMBY_USERID:-99}
+GROUP_ID=${EMBY_GROUPID:-100}
 groupmod -g $GROUP_ID users
 usermod -u $USER_ID nobody
 usermod -g $GROUP_ID nobody

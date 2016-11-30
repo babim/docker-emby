@@ -1,3 +1,5 @@
+[![](https://images.microbadger.com/badges/image/babim/emby.svg)](https://microbadger.com/images/babim/emby "Get your own image badge on microbadger.com")[![](https://images.microbadger.com/badges/version/babim/emby.svg)](https://microbadger.com/images/babim/emby "Get your own version badge on microbadger.com")
+
 ## Description:
 
 This is a Dockerfile for "Emby Server" - (http://emby.media/)

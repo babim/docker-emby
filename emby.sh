@@ -27,6 +27,9 @@ if [ "$DATA_CURRENT_USER" != "$USER" ]; then
     chown -R "$USER":users "$PROGRAMDATA"
 fi
 
+# option with entrypoint
+if [ -f "/option.sh" ]; then /option.sh; fi
+
 # Run emby server
 cd $HOME_PATH/bin/
 exec env MONO_THREADS_PER_CPU=100 MONO_GC_PARAMS=nursery-size=64m /sbin/setuser nobody mono-sgen $HOME_PATH/bin/MediaBrowser.Server.Mono.exe \

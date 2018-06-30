@@ -1,5 +1,11 @@
 FROM babim/debianbase
 
+# Download option
+## ubuntu/debian
+RUN apt-get update && \
+    apt-get install -y wget bash && cd / && wget --no-check-certificate https://raw.githubusercontent.com/babim/docker-tag-options/master/z%20SCRIPT%20AUTO/option.sh && \
+    chmod 755 /option.sh && apt-get purge -y wget
+    
 # Configure user nobody to match unRAID's settings
 RUN export DEBIAN_FRONTEND='noninteractive' && \
     groupmod -g 100 users && \
@@ -9,9 +15,9 @@ RUN export DEBIAN_FRONTEND='noninteractive' && \
     chown -R nobody:users /home
 
 # add source repo
-RUN wget http://download.opensuse.org/repositories/home:emby/Debian_8.0/Release.key && \
+RUN wget http://download.opensuse.org/repositories/home:emby/Debian_9.0/Release.key && \
     apt-key add - < Release.key && rm -f Release.key && \
-    echo 'deb http://download.opensuse.org/repositories/home:/emby/Debian_8.0/ /' > /etc/apt/sources.list.d/emby-server.list && \
+    echo 'deb http://download.opensuse.org/repositories/home:/emby/Debian_9.0/ /' > /etc/apt/sources.list.d/emby-server.list && \
     echo 'deb http://www.deb-multimedia.org jessie main non-free' > /etc/apt/sources.list.d/deb-multimedia.list && \
     apt-get update && apt-get install -y --force-yes deb-multimedia-keyring
 

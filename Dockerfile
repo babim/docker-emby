@@ -24,7 +24,7 @@ RUN wget http://download.opensuse.org/repositories/home:emby/Debian_9.0/Release.
 # Install Dependencies
 RUN apt-get update -qq && \
     apt-get install -qy --force-yes mono-runtime \
-    mediainfo wget libsqlite3-dev libc6-dev ffmpeg libembymagickwand-6.q8-2 libembymagickcore-6.q8-2 \
+    mediainfo gnupg libsqlite3-dev libc6-dev ffmpeg libembymagickwand-6.q8-2 libembymagickcore-6.q8-2 \
     sudo imagemagick emby-server
 
 #########################################
